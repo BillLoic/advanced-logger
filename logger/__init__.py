@@ -189,7 +189,7 @@ class Logger:
         self._format = option_dict.get("format", self.configuration["format"])
         self._handler = option_dict.get("handler", self.configuration["handler"])
         self._level = option_dict.get("level", self.configuration["level"])
-        self._use_short_name = option_dict.get("use_short_name", self.configuration["use_short_name"])
+        self._use_short_name = option_dict.get("shorten_levelname", self.configuration["shorten_levelname"])
           
 rootLogger = Logger("root", 
                     handler=StdOutHandler(), 
