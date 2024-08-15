@@ -7,6 +7,7 @@ import inspect
 
 from .utils import *
 from .handler import *
+from .error import *
 
 class Logger:
     """"""
@@ -177,19 +178,7 @@ class Logger:
         self._reconfigure(options)
         
     def _reconfigure(self, option_dict: dict):
-        for key in option_dict.keys():
-            if key not in ["colored", "datefmt", "format", "handler", "level", "use_short_name", "name"]:
-                raise ValueError(f"Invalid key: {key}")
-            
-            elif key == "name":
-                raise ValueError("name of root logger is un-settable")
-        
-        self._colored = option_dict.get("colored", self.configuration["colored"])
-        self._datefmt = option_dict.get("datefmt", self.configuration["datefmt"])
-        self._format = option_dict.get("format", self.configuration["format"])
-        self._handler = option_dict.get("handler", self.configuration["handler"])
-        self._level = option_dict.get("level", self.configuration["level"])
-        self._use_short_name = option_dict.get("shorten_levelname", self.configuration["shorten_levelname"])
+        raise Deprecated("reconfigure", "1.0.0a1.post5", has_new=False)
           
 rootLogger = Logger("root", 
                     handler=StdOutHandler(), 
