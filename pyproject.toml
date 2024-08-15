@@ -1,5 +1,5 @@
 [project]
-name = "logger"
-version = "1.0.0a1.post1.dev1"
+name = "advanced-logger"
+version = "1.0.0a1.post3"
 authors = [{name = "BillLoic", email = "billloic6@gmail.com"}]
 readme = "README.md"

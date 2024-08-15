@@ -178,7 +178,7 @@ class Logger:
         
     def _reconfigure(self, option_dict: dict):
         for key in option_dict.keys():
-            if key not in VAILD_KEY:
+            if key not in ["colored", "datefmt", "format", "handler", "level", "use_short_name", "name"]:
                 raise ValueError(f"Invalid key: {key}")
             
             elif key == "name":
